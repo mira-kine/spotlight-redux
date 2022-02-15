@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from './counterSlice';
+import { decrement, increment, double, reset } from './counterSlice';
 
 const Counter = () => {
-  // The function below is called a selector and allows us to select a value from
-  // the state.
+  // The function below is called a selector and allows us to select a value
+  // from the state.
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
 
@@ -26,6 +26,22 @@ const Counter = () => {
         }}
       >
         +
+      </button>
+      <button
+        aria-label="double value"
+        onClick={() => {
+          dispatch(double());
+        }}
+      >
+        * 2
+      </button>
+      <button
+        aria-label="reset value"
+        onClick={() => {
+          dispatch(reset());
+        }}
+      >
+        reset
       </button>
     </div>
   );
