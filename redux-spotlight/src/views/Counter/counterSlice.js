@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+const pinkRGB = 'rgb(52, 211, 153)';
 
 const initialState = {
   count: 0,
+  color: pinkRGB,
 };
 
 export const counterSlice = createSlice({
@@ -23,10 +25,14 @@ export const counterSlice = createSlice({
     reset: (state) => {
       state.count = 0;
     },
+    // changeColor: (state) => {
+    //   state.count >= 10;
+    // },
   },
 });
 
-export const { increment, decrement, double, reset } = counterSlice.actions;
+export const { increment, decrement, double, reset, changeColor } =
+  counterSlice.actions;
 
 //Export the reducer function from the slice
 export default counterSlice.reducer;
